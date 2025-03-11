@@ -20,13 +20,16 @@ def replace_position1(board_list):
     while loopzaum == False:
         position = input("What position do you want to mark? ")
         try:
-            if position.lower == ("stop"):
-                return ("Game canceled!")
-            position = int(position)
+            if position == "stop":
+                return "Game Canceled!"
+                break
             if position not in range(9):
                 raise ValueError("Invalid position. Please enter a number between 0 and 8.")
+            if position.isdigit() == False:
+                raise ValueError("Only type numbers from 0-8")
             if board_list[position] != " ":
                 raise ValueError("Position already taken. Try another one.")
+            position = int(position)
             board_list[position] = "X"
             print(" ",board_list[6],"|",board_list[7],"|",board_list[8])
             print("-------------")
@@ -60,9 +63,9 @@ def replace_position1(board_list):
 def victory():
     pass
 
+#MAIN
 def game_main():
-    board_list = [" "," "," "," "," "," "," "," "," "]
-    welcome()
+    board_list = welcome()
     loopzaum = False
     replace_position1(board_list)
     while True:
