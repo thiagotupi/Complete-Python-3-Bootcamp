@@ -1,6 +1,4 @@
-
 import random
-
 # Define card values and suits
 card_values = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A']
 card_suits = ['Hearts', 'Diamonds', 'Clubs', 'Spades']
@@ -19,7 +17,7 @@ def calculate_hand_value(hand):
     value = 0
     ace_count = 0
     for card in hand:
-        card_value = card.split()
+        card_value = card.split()[0]
         if card_value in ['J', 'Q', 'K']:
             value += 10
         elif card_value == 'A':
