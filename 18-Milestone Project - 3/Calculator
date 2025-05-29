@@ -1,0 +1,25 @@
+class Calculator:
+    def __init__(self):
+        print("Choose between options below:\n" \
+" 1 - Add \n" \
+" 2 - Subtract \n" \
+" 3 - Multiply \n" \
+" 4 - Divide \n")
+        pass
+    def add(self, x, y):
+        return x + y
+
+    def subtract(self, x, y):
+        return x - y
+
+    def multiply(self, x, y):
+        return x * y
+
+    def divide(self, x, y):
+        if y != 0:
+            return x / y
+        else:
+            return "Error! Division by zero."
+
+#Create instance of Calculator
+calc = Calculator()
